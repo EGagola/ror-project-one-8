@@ -1,0 +1,52 @@
+<%= form_with(model: c_lothing, local: true) do |form| %>
+  <% if c_lothing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(c_lothing.errors.count, "error") %> prohibited this c_lothing from being saved:</h2>
+
+      <ul>
+      <% c_lothing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :colour %>
+    <%= form.text_field :colour %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.text_field :size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :outer_id %>
+    <%= form.number_field :outer_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

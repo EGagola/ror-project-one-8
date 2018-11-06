@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>C Lothings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Colour</th>
+      <th>Size</th>
+      <th>Outer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @c_lothings.each do |c_lothing| %>
+      <tr>
+        <td><%= c_lothing.name %></td>
+        <td><%= c_lothing.category %></td>
+        <td><%= c_lothing.price %></td>
+        <td><%= c_lothing.description %></td>
+        <td><%= c_lothing.colour %></td>
+        <td><%= c_lothing.size %></td>
+        <td><%= c_lothing.outer_id %></td>
+        <td><%= link_to 'Show', c_lothing %></td>
+        <td><%= link_to 'Edit', edit_c_lothing_path(c_lothing) %></td>
+        <td><%= link_to 'Destroy', c_lothing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New C Lothing', new_c_lothing_path %>

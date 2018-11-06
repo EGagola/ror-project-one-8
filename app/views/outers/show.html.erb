@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @outer.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @outer.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_outer_path(@outer) %> |
+<%= link_to 'Back', outers_path %>
