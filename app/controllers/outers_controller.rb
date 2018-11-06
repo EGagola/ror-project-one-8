@@ -1,5 +1,6 @@
 class OutersController < ApplicationController
   before_action :set_outer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /outers
   # GET /outers.json
