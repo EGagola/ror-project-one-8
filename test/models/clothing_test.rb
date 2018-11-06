@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CLothingTest < ActiveSupport::TestCase
+class ClothingTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

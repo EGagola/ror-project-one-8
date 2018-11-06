@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :c_lothings
+  resources :clothings
   resources :homes
   resources :foods
   resources :outers

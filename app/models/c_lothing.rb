@@ -1,2 +1,0 @@
-class CLothing < ApplicationRecord
-end
