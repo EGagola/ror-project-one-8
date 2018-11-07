@@ -1,6 +1,10 @@
+<% if current_user.id == 1 %>
 <h1>Editing Home</h1>
 
 <%= render 'form', home: @home %>
 
 <%= link_to 'Show', @home %> |
 <%= link_to 'Back', homes_path %>
+<% else %>
+  <h1>These are not the droids you're looking for</h1>
+<% end %>

@@ -1,5 +1,7 @@
-<h1>New Outer</h1>
-
-<%= render 'form', outer: @outer %>
-
-<%= link_to 'Back', outers_path %>
+<% if current_user.id == 1 %>
+  <h1>New Outer</h1>
+  <%= render 'form', outer: @outer %>
+  <%= link_to 'Back', outers_path %>
+<% else %>
+  <h1>These are not the droids you're looking for</h1>
+<% end %>

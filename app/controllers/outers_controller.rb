@@ -12,12 +12,14 @@ class OutersController < ApplicationController
   # GET /outers/1.json
   def show
     @outer = Outer.find(params[:id])
-    @homes = Home.all
   end
 
   # GET /outers/new
   def new
     @outer = Outer.new
+    if current_user.id != 1
+      redirect_to "outers#maintenance"
+    end
   end
 
   # GET /outers/1/edit

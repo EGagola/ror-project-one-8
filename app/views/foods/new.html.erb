@@ -1,5 +1,9 @@
+<% if current_user.id == 1 %>
 <h1>New Food</h1>
 
 <%= render 'form', food: @food %>
 
 <%= link_to 'Back', foods_path %>
+<% else %>
+  <h1>These are not the droids you're looking for</h1>
+<% end %>
