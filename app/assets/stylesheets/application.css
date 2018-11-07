@@ -227,3 +227,11 @@ label {
   height: 70px;
 border-radius: 5px;
 }
+.flexul{
+  display: flex;
+}
+li.colfour{
+  width: 24%;
+  text-align: center;
+
+}
