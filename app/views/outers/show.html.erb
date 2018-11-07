@@ -12,3 +12,41 @@
 
 <%= link_to 'Edit', edit_outer_path(@outer) %> |
 <%= link_to 'Back', outers_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Colour</th>
+      <th>Height</th>
+      <th>Width</th>
+      <th>Depth</th>
+      <th>Weight</th>
+      <th>Outer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @homes.each do |home| %>
+      <tr>
+        <td><%= home.name %></td>
+        <td><%= home.category %></td>
+        <td><%= home.price %></td>
+        <td><%= home.description %></td>
+        <td><%= home.colour %></td>
+        <td><%= home.height %></td>
+        <td><%= home.width %></td>
+        <td><%= home.depth %></td>
+        <td><%= home.weight %></td>
+        <td><%= home.outer_id %></td>
+        <td><%= link_to 'Show', home %></td>
+        <td><%= link_to 'Edit', edit_home_path(home) %></td>
+        <td><%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

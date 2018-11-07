@@ -12,6 +12,7 @@ class OutersController < ApplicationController
   # GET /outers/1.json
   def show
     @outer = Outer.find(params[:id])
+    @homes = Home.all
   end
 
   # GET /outers/new
