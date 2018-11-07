@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  root to: "outers#index"
   resources :clothings
   resources :homes
   resources :foods
