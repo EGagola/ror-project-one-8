@@ -1,6 +1,10 @@
-<h1>Editing Clothing</h1>
+<% if current_user.id == 1 %>
+  <h1>Editing Clothing</h1>
 
-<%= render 'form', clothing: @clothing %>
+  <%= render 'form', clothing: @clothing %>
 
-<%= link_to 'Show', @clothing %> |
-<%= link_to 'Back', clothings_path %>
+  <%= link_to 'Show', @clothing %> |
+  <%= link_to 'Back', clothings_path %>
+<% else %>
+  <%= render file: "#{Rails.root}/public/422", status: :in_development %>
+<% end %>

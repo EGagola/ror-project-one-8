@@ -6,5 +6,5 @@
 <%= link_to 'Show', @home %> |
 <%= link_to 'Back', homes_path %>
 <% else %>
-  <h1>These are not the droids you're looking for</h1>
+<%= render file: "#{Rails.root}/public/422", status: :in_development %>
 <% end %>
