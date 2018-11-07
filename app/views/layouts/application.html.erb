@@ -8,16 +8,27 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
+  <header class="bg-red-90 fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
+<nav class="f6 fw6 ttu tracked">
+  <div class="white">
+    <%= link_to "Homepage", outers_path, :class => ' white navbar-link link dib mr3 ' %> |
     <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+      Logged in as <strong class="white"><%= current_user.email %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link  white dib mr3' %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link link white dib mr3' %>
     <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link link white dib mr3' %> |
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link link white dib mr3' %>
     <% end %>
-    <%= yield %>
+  </div>
+
+
+</nav>
+</header>
+  <body>
+    <div class="content_main">
+
+      <%= yield %>
+    </div>
   </body>
 </html>

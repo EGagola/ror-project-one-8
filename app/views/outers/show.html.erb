@@ -1,17 +1,115 @@
 <p id="notice"><%= notice %></p>
-
+<br><br>
 <p>
-  <strong>Name:</strong>
-  <%= @outer.name %>
-</p>
+  <strong class="title is-1"><%= @outer.name %>:</strong>
 
+</p><br>
+<h2 class="f3 lh-title fw9 mb3 mt0 pt3 bt bw2">Categories:</h2>
 <p>
   <% if @outer.name == "Food" %>
-  <%= link_to 'All Products', foods_path %>
+    <% meat = 0 %>
+    <% dairy = 0 %>
+    <% veg = 0 %>
+    <% carbohydrate = 0 %>
+    <ul>
+      <% @foods.each do |food| %>
+        <% if food.category == "Meat" %>
+          <% if meat < 1 %>
+            <li class="f3 link hover-dark-blue b no-underline black dib ph2 pv1"><%= food.category %></li>
+            <% meat += 1 %>
+          <% end %>
+        <% end %>
+        <% if food.category == "Dairy" %>
+          <% if dairy < 1 %>
+            <li class="f3 link hover-dark-blue b no-underline black dib ph2 pv1"><%= food.category %></li>
+            <% dairy += 1 %>
+          <% end %>
+        <% end %>
+        <% if food.category == "Fruit & Veg" %>
+          <% if veg < 1 %>
+            <li class="f3 link hover-dark-blue b no-underline black dib ph2 pv1"><%= food.category %></li>
+            <% veg += 1 %>
+          <% end %>
+        <% end %>
+        <% if food.category == "Carbohydrate" %>
+          <% if carbohydrate < 1 %>
+            <li class="f3 link hover-dark-blue b no-underline black dib ph2 pv1"><%= food.category %></li>
+            <% carbohydrate += 1 %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+    <%= link_to 'All Products', foods_path %>
   <% elsif @outer.name == "Home" %>
-  <%= link_to 'All Products', homes_path %>
+    <% ss = 0 %>
+    <% kitchen = 0 %>
+    <% sf = 0 %>
+    <% bathroom = 0 %>
+    <ul>
+      <% @homes.each do |home| %>
+        <% if home.category == "Surfaces & Seating" %>
+          <% if ss < 1 %>
+            <li class="f3 link hover-dark-blue b no-underline black dib ph2 pv1" onclick="this.style.backgroundColor='#000099'"><%= home.category %></li>
+            <% ss += 1 %>
+          <% end %>
+        <% end %>
+        <% if home.category == "Kitchen" %>
+          <% if kitchen < 1 %>
+            <li class="f3 link hover-green b no-underline black dib ph2 pv1" onclick="this.style.backgroundColor='#009900'"><%= home.category %></li>
+            <% kitchen += 1 %>
+          <% end %>
+        <% end %>
+        <% if home.category == "Soft Furnishings" %>
+          <% if sf < 1 %>
+            <li class="f3 link hover-dark-red b no-underline black dib ph2 pv1" onclick="this.style.backgroundColor='#990000' ""><%= home.category %></li>
+            <% sf += 1 %>
+          <% end %>
+        <% end %>
+        <% if home.category == "Bathroom" %>
+          <% if bathroom < 1 %>
+            <li class="f3 link hover-dark-pink b no-underline black dib ph2 pv1"><%= home.category %></li>
+            <% bathroom += 1 %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+    <%= link_to 'All Products', homes_path %>
   <% elsif @outer.name == "Clothing" %>
-  <%= link_to 'All Products', clothings_path %>
+    <% tops = 0 %>
+    <% bottoms = 0 %>
+    <% shoes = 0 %>
+    <% accessories = 0 %>
+    <ul>
+      <% @clothings.each do |clothing| %>
+        <% if clothing.category == "Tops" %>
+          <% if tops < 1 %>
+            <li><%= clothing.category %></li>
+            <% tops += 1 %>
+          <% end %>
+        <% end %>
+        <% if clothing.category == "Bottoms" %>
+          <% if bottoms < 1 %>
+            <li><%= clothing.category %></li>
+            <% bottoms += 1 %>
+          <% end %>
+        <% end %>
+        <% if clothing.category == "Shoes" %>
+          <% if shoes < 1 %>
+            <li><%= clothing.category %></li>
+            <% shoes += 1 %>
+          <% end %>
+        <% end %>
+        <% if clothing.category == "Accessories" %>
+          <% if accessories < 1 %>
+            <li><%= clothing.category %></li>
+            <% accessories += 1 %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+    <%= link_to 'All Products', clothings_path %>
+    <% else %>
+      <%= render file: "#{Rails.root}/public/maintenance", status: :in_development %>
   <% end %>
 
 </p>
