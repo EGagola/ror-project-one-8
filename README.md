@@ -1,8 +1,5 @@
 # README
 
-# ROR-PROJECT-ONE-8
-
-
 <b> Overview: </b>
 
 The project task was to develop a full stack application, have it hosted on Heroku, and present it over a period of 4 days. This application replecates a basic department store website. The landing page lists the main departments in the store, with links to more specific sections and categories. Should users wish to view a specific product, the relevant information and a photo is displayed. A navigation bar allows the user to log out, change their details or access the homepage at any time. The application was made RESTful and the Tachyons CSS framework was used in conjunction with Bulma.
