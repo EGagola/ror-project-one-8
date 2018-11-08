@@ -4,7 +4,7 @@
 <p class="f3 lh-title fw9 mb3 mt0 pt3 bt bw2">Name</p>
 <p><% @outers.each do |outer| %></p>
   <p class="f3 link hover-dark-blue b no-underline black dib ph2 pv1"><%= outer.name %></p>
-  <p class="f7 link hover-dark-blue b no-underline black dib ph2 pv1"><%= link_to 'Go to Department', outer %></p>
+  <p class="f7 hover-bg-light-blue b no-underline dib ph2 pv1"><%= link_to 'Go to Department', outer %></p>
   <% if current_user.id == 1 %>
     <p class="f7 link hover-dark-blue b no-underline black dib ph2 pv1"><%= link_to 'Edit', edit_outer_path(outer) %></p>
     <p class="f7 link hover-dark-blue b no-underline black dib ph2 pv1"><%= link_to 'Destroy', outer, method: :delete, data: { confirm: 'Are you sure?' } %></p>

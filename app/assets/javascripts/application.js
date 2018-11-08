@@ -14,3 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+function showTops() {
+  for (var i = 0; i < clothing.length; i++) {
+    if (clothing[i].category == "Tops") {
+      document.getElementsByClassName('tops')
+    }
+  }
+}

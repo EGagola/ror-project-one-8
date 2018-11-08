@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<div class="fl w-50 tc">
 
 <p>
   <strong>Name:</strong>
@@ -29,6 +30,12 @@
   <strong>Outer:</strong>
   <%= @food.outer.name %>
 </p>
+<div class="fl w-50 tc">
+  <br>
+  <p>
+    <img src="<%= @food.src %>" alt="product image" height="300px" width="300px">
+  </p>
+</div>
 
 <%= link_to 'Edit', edit_food_path(@food) %> |
 <%= link_to 'Back', foods_path %>

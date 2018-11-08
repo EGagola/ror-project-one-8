@@ -83,7 +83,10 @@
       <% @clothings.each do |clothing| %>
         <% if clothing.category == "Tops" %>
           <% if tops < 1 %>
-            <li class=" colfour f3 hover-dark-blue b no-underline black dib ph2 pv1" ><%= link_to clothing.category, clothings_path %></li>
+            <div class="tops">
+              <li class=" colfour f3 hover-dark-blue b no-underline black dib ph2 pv1" ><%= link_to clothing.category, clothings_path %></li>
+              <button type="button" name="button" onclick=showTops()>Tops</button>
+            </div>
             <% tops += 1 %>
           <% end %>
         <% end %>
@@ -101,7 +104,7 @@
         <% end %>
         <% if clothing.category == "Accessories" %>
           <% if accessories < 1 %>
-            <li class=" colfour f3 hover-dark-blue b no-underline dib ph2 pv1" ><%= link_to clothing.category, clothings_path %></li>
+            <li class="f3 hover-dark-blue b no-underline dib ph2 pv1" ><%= link_to clothing.category, clothings_path %></li>
             <% accessories += 1 %>
           <% end %>
         <% end %>

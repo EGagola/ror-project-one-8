@@ -130,6 +130,7 @@ label {
 
 .link:hover {
     transition: color .15s ease-in;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .link:active {
