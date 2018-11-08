@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="title is-1">HomeWare</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Colour</th>
+      <th colspan="8"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @homes.each do |home| %>
+      <tr>
+        <td><%= home.name %></td>
+        <td><%= home.category %></td>
+        <td>£<%= home.price %></td>
+        <td><%= home.colour %></td>
+        <td><%= link_to 'Show', home %></td>
+        <% if current_user.id == 1 %>
+          <td><%= link_to 'Edit', edit_home_path(home) %></td>
+          <td><%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if current_user.id == 1 %>
+<%= link_to 'New Home', new_home_path %>
+<% end %>

@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+<div>
+  <div class="fl w-50 tc">
+    <br><br>
+    <p>
+      <strong>Name:</strong>
+      <%= @home.name %>
+    </p>
+
+    <p>
+      <strong>Category:</strong>
+      <%= @home.category %>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= @home.price %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @home.description %>
+    </p>
+
+    <p>
+      <strong>Colour:</strong>
+      <%= @home.colour %>
+    </p>
+
+    <p>
+      <strong>Height:</strong>
+      <%= @home.height %>
+    </p>
+
+    <p>
+      <strong>Width:</strong>
+      <%= @home.width %>
+    </p>
+
+    <p>
+      <strong>Depth:</strong>
+      <%= @home.depth %>
+    </p>
+
+    <p>
+      <strong>Weight:</strong>
+      <%= @home.weight %>
+    </p>
+
+    <p>
+      <strong>Outer:</strong>
+      <%= @home.outer_id %>
+    </p>
+  </div>
+  <div class="fl w-50 tc">
+    <br>
+    <p>
+      <img src="<%= @home.src %>" alt="product image" height="300px" width="300px">
+    </p>
+  </div>
+
+</div>
+<%= link_to 'Edit', edit_home_path(@home) %> |
+<%= link_to 'Back', homes_path %>

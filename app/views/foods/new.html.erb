@@ -1,0 +1,9 @@
+<% if current_user.id == 1 %>
+<h1>New Food</h1>
+
+<%= render 'form', food: @food %>
+
+<%= link_to 'Back', foods_path %>
+<% else %>
+  <%= render file: "#{Rails.root}/public/422", status: :in_development %>
+<% end %>
