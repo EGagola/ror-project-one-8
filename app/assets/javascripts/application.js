@@ -14,10 +14,16 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-function showTops() {
-  for (var i = 0; i < clothing.length; i++) {
-    if (clothing[i].category == "Tops") {
-      document.getElementsByClassName('tops')
-    }
-  }
+var timesPressed = 0
+function showMeat() {
+  // for (var i = 0; i < @clothing.length; i++) {
+    // if (@clothing[i].category == "Tops") {
+      if (timesPressed < 1) {
+        var e = document.createElement('h2');
+        var f = document.createTextNode("Beef Pork Chicken")
+        document.getElementsByClassName('meat').appendChild(f);
+        timesPressed += 1;
+      }
+    // }
+  // }
 }

@@ -4,6 +4,20 @@
   <strong class="title is-1"><%= @outer.name %>:</strong>
 
 </p><br>
+<script type="text/javascript">
+  function showHide(){
+    var checkbox = document.getElementById("chk");
+    var hiddeninputs = document.getElementsByClassName("hidden");
+    for(var i=0; i!= hiddeninputs.length; i++){
+      if(checkbox.checked){
+        hiddeninputs[i].style.display = "block";
+      }
+      else{
+        hiddeninputs[i].style.display = "none";
+      }
+    }
+  }
+</script>
 <h2 class="f3 lh-title fw9 mb3 mt0 pt3 bt bw2">Categories:</h2>
 <p>
   <% if @outer.name == "Food" %>
@@ -14,28 +28,50 @@
     <ul class="flexul">
       <% @foods.each do |food| %>
         <% if food.category == "Meat" %>
-          <% if meat < 1 %>
-            <li class=" colfour f3 link hover-dark-blue b no-underline black dib ph2 pv1"><%= food.category %></li>
-            <% meat += 1 %>
-          <% end %>
+          <div class="columnmeat">
+            <% if meat < 1 %>
+              <li class=" colfour f3 link b no-underline black dib ph2 pv1" onmouseover="this.style.color='green'"><%= food.category %></li>
+              <br>
+              <h2 class="hidden">Beef</h2>
+              <h2 class="hidden">Pork</h2>
+              <h2 class="hidden">Chicken</h2>
+              <% meat += 1 %>
+            <% end %>
+          </div>
         <% end %>
         <% if food.category == "Dairy" %>
-          <% if dairy < 1 %>
-            <li class=" colfour f3 link hover-green b no-underline black dib ph2 pv1"><%= food.category %></li>
-            <% dairy += 1 %>
-          <% end %>
+          <div class="columnmeat">
+            <% if dairy < 1 %>
+              <li class=" colfour f3 link b no-underline black dib ph2 pv1" onmouseover="this.style.color='blue'"><%= food.category %></li>
+              <br>
+              <h2 class="hidden">Cheese</h2>
+              <h2 class="hidden">Butter</h2>
+              <br>
+              <% dairy += 1 %>
+            <% end %>
+          </div>
         <% end %>
         <% if food.category == "Fruit & Veg" %>
-          <% if veg < 1 %>
-            <li class=" colfour f3 link hover-dark-blue b no-underline black dib ph2 pv1"><%= food.category %></li>
-            <% veg += 1 %>
-          <% end %>
+          <div class="columnmeat">
+            <% if veg < 1 %>
+              <li class="colfour f3 link b no-underline black dib ph2 pv1" onmouseover="this.style.color='red'"><%= food.category %></li>
+              <br>
+              <h2 class="hidden">Apples</h2>
+              <h2 class="hidden">Lettuce</h2>
+              <br>
+              <% veg += 1 %>
+            <% end %>
+          </div>
         <% end %>
         <% if food.category == "Carbohydrate" %>
-          <% if carbohydrate < 1 %>
-            <li class=" colfour f3 link hover-dark-pink b no-underline black dib ph2 pv1"><%= food.category %></li>
-            <% carbohydrate += 1 %>
-          <% end %>
+          <div class="columnmeat">
+            <% if carbohydrate < 1 %>
+              <li class="colfour f3 link b no-underline black dib ph2 pv1" onmouseover="this.style.color='yellow' "><%= food.category %></li>
+              <br>
+              <h2 class="hidden">Pasta</h2>
+              <% carbohydrate += 1 %>
+            <% end %>
+          </div>
         <% end %>
       <% end %>
     </ul>
@@ -45,31 +81,52 @@
     <% kitchen = 0 %>
     <% sf = 0 %>
     <% bathroom = 0 %>
-    <ul>
+    <ul class="flexul">
       <% @homes.each do |home| %>
         <% if home.category == "Surfaces & Seating" %>
-          <% if ss < 1 %>
-            <li class=" colfour f3 link hover-dark-blue b no-underline black dib ph2 pv1" onclick="this.style.backgroundColor='#000099'"><%= home.category %></li>
-            <% ss += 1 %>
-          <% end %>
+          <div class="columnmeat">
+            <% if ss < 1 %>
+              <li class=" colfour f3 link b no-underline black dib ph2 pv1" onmouseover="this.style.color='green'"><%= home.category %></li>
+              <br>
+              <h2 class="hidden">Dining Table</h2>
+              <br>
+              <% ss += 1 %>
+            <% end %>
+          </div>
         <% end %>
         <% if home.category == "Kitchen" %>
+        <div class="columnmeat">
           <% if kitchen < 1 %>
-            <li class=" colfour f3 link hover-green b no-underline black dib ph2 pv1" onclick="this.style.backgroundColor='#009900'"><%= home.category %></li>
+            <li class=" colfour f3 link b no-underline black dib ph2 pv1" onmouseover="this.style.color='blue'"><%= home.category %></li>
+            <br>
+            <h2 class="hidden">Fridge</h2>
+            <h2 class="hidden">Oven</h2>
+            <br>
             <% kitchen += 1 %>
           <% end %>
+          </div>
         <% end %>
         <% if home.category == "Soft Furnishings" %>
+        <div class="columnmeat">
           <% if sf < 1 %>
-            <li class=" colfour f3 link hover-dark-red b no-underline black dib ph2 pv1" onclick="this.style.backgroundColor='#990000' ""><%= home.category %></li>
+            <li class="colfour f3 link b no-underline black dib ph2 pv1" onmouseover="this.style.color='red'"><%= home.category %></li>
+            <br>
+            <h2 class="hidden">Mirror</h2>
+            <br>
             <% sf += 1 %>
           <% end %>
+          </div>
         <% end %>
         <% if home.category == "Bathroom" %>
+        <div class="columnmeat">
           <% if bathroom < 1 %>
-            <li class=" colfour f3 link hover-dark-pink b no-underline black dib ph2 pv1"><%= home.category %></li>
+            <li class="colfour f3 link b no-underline black dib ph2 pv1" onmouseover="this.style.color='yellow' "><%= home.category %></li>
+            <br>
+            <h2 class="hidden">Toilet</h2>
+            <br>
             <% bathroom += 1 %>
           <% end %>
+          </div>
         <% end %>
       <% end %>
     </ul>
@@ -79,43 +136,68 @@
     <% bottoms = 0 %>
     <% shoes = 0 %>
     <% accessories = 0 %>
-    <ul>
+    <ul class="flexul">
       <% @clothings.each do |clothing| %>
         <% if clothing.category == "Tops" %>
-          <% if tops < 1 %>
-            <div class="tops">
-              <li class=" colfour f3 hover-dark-blue b no-underline black dib ph2 pv1" ><%= link_to clothing.category, clothings_path %></li>
-              <button type="button" name="button" onclick=showTops()>Tops</button>
-            </div>
-            <% tops += 1 %>
-          <% end %>
+          <div class="columnmeat">
+            <% if tops < 1 %>
+                <li class=" colfour f3 link b no-underline black dib ph2 pv1" onmouseover="this.style.color='green'"><%= clothing.category %></li>
+                <br>
+                <h2 class="hidden">Blouse</h2>
+                <br>
+              <% tops += 1 %>
+            <% end %>
+          </div>
         <% end %>
         <% if clothing.category == "Bottoms" %>
-          <% if bottoms < 1 %>
-            <li class=" colfour f3 hover-dark-blue b no-underline black dib ph2 pv1" ><%= link_to clothing.category, clothings_path %></li>
-            <% bottoms += 1 %>
-          <% end %>
+          <div class="columnmeat">
+            <% if bottoms < 1 %>
+              <li class=" colfour f3 link b no-underline black dib ph2 pv1" onmouseover="this.style.color='blue'"><%= clothing.category %></li>
+              <br>
+              <h2 class="hidden">Skirt</h2>
+              <br>
+              <% bottoms += 1 %>
+            <% end %>
+          </div>
         <% end %>
         <% if clothing.category == "Shoes" %>
-          <% if shoes < 1 %>
-            <li class=" colfour f3 hover-dark-blue b no-underline dib ph2 pv1" ><%= link_to clothing.category, clothings_path %></li>
-            <% shoes += 1 %>
-          <% end %>
+          <div class="columnmeat">
+            <% if shoes < 1 %>
+              <li class="colfour f3 link b no-underline black dib ph2 pv1" onmouseover="this.style.color='red'"><%= clothing.category %></li>
+              <br>
+              <h2 class="hidden">Heels</h2>
+              <br>
+              <% shoes += 1 %>
+            <% end %>
+          </div>
         <% end %>
         <% if clothing.category == "Accessories" %>
-          <% if accessories < 1 %>
-            <li class="f3 hover-dark-blue b no-underline dib ph2 pv1" ><%= link_to clothing.category, clothings_path %></li>
-            <% accessories += 1 %>
-          <% end %>
+          <div class="columnmeat">
+            <% if accessories < 1 %>
+              <li class="colfour f3 link b no-underline black dib ph2 pv1" onmouseover="this.style.color='yellow' "><%= clothing.category %></li>
+              <br>
+              <h2 class="hidden">Gloves</h2>
+              <h2 class="hidden">Scarf</h2>
+              <br>
+              <% accessories += 1 %>
+            <% end %>
+          </div>
         <% end %>
       <% end %>
     </ul>
     <br>
-    <%= link_to 'All Products', clothings_path %>
+    <br><br
+  </p>
+
+<p></p>
+    <%= link_to 'Link to All Products', clothings_path %>
     <% else %>
       <%= render file: "#{Rails.root}/public/maintenance", status: :in_development %>
   <% end %>
-</p>
+  <br><br>    <br><br><br><br>
+
+  <label for="chk"><strong>Click box to Show Products</strong></label>
+  <input type="checkbox" name="chk" id="chk" onclick="showHide()"/>
 <br>
 <% if current_user.id == 1 %>
 <%= link_to 'Edit', edit_outer_path(@outer) %>

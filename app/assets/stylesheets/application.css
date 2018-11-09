@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
-/* *= require tachyons */
+ /* @import "bootstrap"; */
+ /* *= require tachyons */
 @import "bulma";
 body {
   background-color: #EEF;
@@ -123,16 +124,26 @@ label {
     text-decoration: none;
     transition: color .15s ease-in;
 }
-
+.hidden{
+  display: none;
+  font-weight: bold;
+}
+.columnmeat{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  text-align: center;
+}
 .link:link, .link:visited {
     transition: color .15s ease-in;
 }
 
 .link:hover {
     transition: color .15s ease-in;
-    background-color: rgba(0, 0, 0, 0.1);
 }
-
+.meat{
+  width: 25%;
+}
 .link:active {
     transition: color .15s ease-in;
 }
@@ -232,7 +243,7 @@ border-radius: 5px;
   display: flex;
 }
 li.colfour{
-  width: 24%;
+  /* width: 24%; */
   text-align: center;
 
 }

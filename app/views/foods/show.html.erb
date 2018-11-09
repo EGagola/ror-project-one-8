@@ -1,35 +1,33 @@
 <p id="notice"><%= notice %></p>
+<br><br>
 <div class="fl w-50 tc">
 
 <p>
-  <strong>Name:</strong>
+  <strong class="f5 ph2 pv2">Name:</strong>
   <%= @food.name %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong class="f5 ph2 pv2">Category:</strong>
   <%= @food.category %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong class="f5 ph2 pv2">Price:</strong>
   <%= @food.price %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @food.description %>
-</p>
 
 <p>
-  <strong>Vegetarian:</strong>
+  <strong class="f5 ph2 pv1">Vegetarian:</strong>
   <%= @food.vegetarian %>
 </p>
 
 <p>
-  <strong>Outer:</strong>
-  <%= @food.outer.name %>
+  <strong class="f5 ph2 pv1">Description:</strong>
+  <%= @food.description %>
 </p>
+</div>
 <div class="fl w-50 tc">
   <br>
   <p>
@@ -37,5 +35,4 @@
   </p>
 </div>
 
-<%= link_to 'Edit', edit_food_path(@food) %> |
 <%= link_to 'Back', foods_path %>
